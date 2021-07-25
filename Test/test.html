@@ -7,16 +7,93 @@
     
     <style>
 
-        body {
-            font-family: "Arial";
+        .border {
+            border: 1px solid yellow;
         }
 
+        html {
+            padding: 0;
+            margin: 0;
+            background-color: white;            
+        }
+
+        body {
+            width: 640px;
+            height: 480px;
+            padding: 0;
+            margin: 0;
+            background-color: black;
+            box-sizing: border-box;
+            
+            font-family: "Arial";
+
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        .week {
+            width: 80px;
+            height: 100%;
+            color: white;
+
+            font-size: 32px;
+            font-weight: 900;
+
+
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .day {
+            width: 100%;
+            text-align: center;
+            border-top-right-radius: 40px;
+            border-bottom-right-radius: 40px;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .weekend {
+            color: tomato;
+        }
+
+        .current-day {
+            background-color: white;
+            color: black;
+        }
+
+        .current-day.weekend {
+            background-color: tomato;
+        }
+
+        .year {
+            width: 120px;
+            height: 100%;
+            color: white;
+
+            font-weight: 900;
+
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .month {
+            width: 100%;
+            border-top-right-radius: 40px;
+            border-bottom-right-radius: 40px;
+            cursor: pointer;
+        }
+
+        /*
         .background {
             width: 640px;
             height: 480px;
             background-color: black;
             box-sizing: border-box;
-            /* padding-top: 30px; */
 
             display: flex;
             flex-flow: column nowrap;
@@ -27,7 +104,6 @@
         .info {
             height: 100px;
             width: 100%;
-            /* border-right: 1px solid gainsboro; */
             box-sizing: border-box;
             color: darkgray;
 
@@ -53,7 +129,6 @@
             background-color: darkgray;
             font-size: 48px;
             justify-content: left;
-            /* border-right: 1px solid gainsboro; */
         }
 
         .info {
@@ -108,7 +183,7 @@
             position: absolute;
             left: 100;
             top: 100;
-        }
+        } */
 
     </style>
 
@@ -130,44 +205,70 @@
                 }
             }
 
-            elements = document.querySelectorAll(".month");
-            for (let i = 0; i < elements.length; i++) {
-                elements[i].onclick = function (e) {
-                    this.innerHTML = months[ind++];
-                    ind %= months.length;
-                    /* this.classList.toggle("current-month"); */
-                }
-            }
+            // elements = document.querySelectorAll(".month");
+            // for (let i = 0; i < elements.length; i++) {
+            //     elements[i].onclick = function (e) {
+            //         this.innerHTML = months[ind++];
+            //         ind %= months.length;
+            //         /* this.classList.toggle("current-month"); */
+            //     }
+            // }
 
-            elements = document.querySelectorAll(".movable");
-            for (let i = 0; i < elements.length; i++)
-            {
-                elements[i].pressed = false;
-                elements[i].onmousedown = function(e) {this.pressed = true;}
-                elements[i].onmouseup = function(e) {this.pressed = false;}      
+            // elements = document.querySelectorAll(".movable");
+            // for (let i = 0; i < elements.length; i++)
+            // {
+            //     elements[i].pressed = false;
+            //     elements[i].onmousedown = function(e) {this.pressed = true;}
+            //     elements[i].onmouseup = function(e) {this.pressed = false;}      
 
-                elements[i].onmousemove = function(e) {
-                    if (this.pressed)
-                    {
-                        let style = getComputedStyle(elements[i]);
-                        let width = parseInt(style.width);
-                        let height = parseInt(style.height);
-                        let left = parseInt(style.left) + e.movementX;
-                        let top = parseInt(style.top) + e.movementY;
-                        this.style.left = left + "px";
-                        this.style.top = top + "px";
-                        this.innerHTML = "centerX: " + (left + width/2) + "," + "centerY: " + (top + height/2);
-                        /* console.log(parseInt(getComputedStyle(elements[i]).top)); */
-                    }
-                }
-            }
-            console.log(elements);
+            //     elements[i].onmousemove = function(e) {
+            //         if (this.pressed)
+            //         {
+            //             let style = getComputedStyle(elements[i]);
+            //             let width = parseInt(style.width);
+            //             let height = parseInt(style.height);
+            //             let left = parseInt(style.left) + e.movementX;
+            //             let top = parseInt(style.top) + e.movementY;
+            //             this.style.left = left + "px";
+            //             this.style.top = top + "px";
+            //             this.innerHTML = "centerX: " + (left + width/2) + "," + "centerY: " + (top + height/2);
+            //             /* console.log(parseInt(getComputedStyle(elements[i]).top)); */
+            //         }
+            //     }
+            // }
+            // console.log(elements);
         }
     </script>
 
 </head>
 <body>
-    <div class="background">
+    
+    <div class="week">
+        <span class="day">Пн</span>
+        <span class="day">Вт</span>
+        <span class="day">Ср</span>
+        <span class="day">Чт</span>
+        <span class="day">Пт</span>
+        <span class="day weekend">Сб</span>
+        <span class="day weekend">Вс</span>
+    </div>
+
+    <div class="year">
+        <span class="month">1.  Январь</span>
+        <span class="month">2.  Февраль</span>
+        <span class="month">3.  Март</span>
+        <span class="month">4.  Апрель</span>
+        <span class="month">5.  Май</span>
+        <span class="month">6.  Июнь</span>
+        <span class="month">7.  Июль</span>
+        <span class="month">8.  Август</span>
+        <span class="month">9.  Сентябрь</span>
+        <span class="month">10. Октябрь</span>
+        <span class="month">11. Ноябрь</span>
+        <span class="month">12. Декабрь</span>
+    </div>
+
+    <!-- <div class="background">
 
         <div class="week">
             <span class="day">Пн</span>
@@ -190,6 +291,6 @@
             <div class="battery"></div>
         </div>
 
-    </div>
+    </div> -->
 </body>
 </html>
