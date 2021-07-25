@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+        body {
+            font-family: "Arial";
+        }
+
+        .background {
+            width: 640px;
+            height: 480px;
+            background-color: black;
+            box-sizing: border-box;
+            /* padding-top: 30px; */
+
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        .week,
+        .year,
+        .info {
+            height: 100px;
+            width: 100%;
+            /* border-right: 1px solid gainsboro; */
+            box-sizing: border-box;
+            color: darkgray;
+
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            align-items: center;
+
+            font-weight: 900;
+        }
+
+        .time {
+            width: 100%;
+            height: 230px;
+        }
+
+        .week {
+            height: 140px;
+            font-size: 48px;
+        }
+
+        .year {
+            background-color: darkgray;
+            font-size: 48px;
+            justify-content: left;
+            /* border-right: 1px solid gainsboro; */
+        }
+
+        .info {
+            height: 50px;
+            justify-content: space-between;
+        }
+
+        .day {
+           cursor: pointer;
+           width: 100%;
+           height: 140px;
+           line-height: 140px;
+           text-align: center;
+        }
+
+        .month {
+           cursor: pointer;
+           width: 100%;
+           height: 100px;
+           line-height: 100px;
+           text-align: center;
+        }
+
+        .month {
+            width: 50%
+        }
+
+        .weekend {
+            color: tomato;
+        }
+
+        .current-day,
+        .current-month {
+            background-color: darkgray;
+            color: black;
+        }
+
+        .current-day.weekend {
+            background-color: tomato;
+        }
+
+        .battery {background: url("battery.png") no-repeat center;}
+        .step {background: url("step.png") no-repeat center;}
+
+        .battery,
+        .step {
+            width: 50px;
+            height: 50px;
+        }
+
+        .movable {
+            position: absolute;
+            left: 100;
+            top: 100;
+        }
+
+    </style>
+
+    <script text="javascript">
+        let ind = 0;
+        let months = [
+            "Январь", "Февраль", "Март", "Апрель", 
+            "Май", "Июнь", "Июль", "Август", 
+            "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+        ];
+
+        window.onload = function() {
+            /* alert('Hello WOrld'); */
+            let elements = document.querySelectorAll(".day");
+            for (let i = 0; i < elements.length; i++)
+            {
+                elements[i].onclick = function (e) {
+                    this.classList.toggle("current-day");
+                }
+            }
+
+            elements = document.querySelectorAll(".month");
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].onclick = function (e) {
+                    this.innerHTML = months[ind++];
+                    ind %= months.length;
+                    /* this.classList.toggle("current-month"); */
+                }
+            }
+
+            elements = document.querySelectorAll(".movable");
+            for (let i = 0; i < elements.length; i++)
+            {
+                elements[i].pressed = false;
+                elements[i].onmousedown = function(e) {this.pressed = true;}
+                elements[i].onmouseup = function(e) {this.pressed = false;}      
+
+                elements[i].onmousemove = function(e) {
+                    if (this.pressed)
+                    {
+                        let style = getComputedStyle(elements[i]);
+                        let width = parseInt(style.width);
+                        let height = parseInt(style.height);
+                        let left = parseInt(style.left) + e.movementX;
+                        let top = parseInt(style.top) + e.movementY;
+                        this.style.left = left + "px";
+                        this.style.top = top + "px";
+                        this.innerHTML = "centerX: " + (left + width/2) + "," + "centerY: " + (top + height/2);
+                        /* console.log(parseInt(getComputedStyle(elements[i]).top)); */
+                    }
+                }
+            }
+            console.log(elements);
+        }
+    </script>
+
+</head>
+<body>
+    <div class="background">
+
+        <div class="week">
+            <span class="day">Пн</span>
+            <span class="day">Вт</span>
+            <span class="day">Ср</span>
+            <span class="day">Чт</span>
+            <span class="day">Пт</span>
+            <span class="day weekend">Сб</span>
+            <span class="day weekend">Вс</span>
+        </div>
+
+        <div class="year">
+            <span class="month current-month"></span>
+        </div>
+
+        <div class="time"></div>
+
+        <div class="info">
+            <div class="step"></div>
+            <div class="battery"></div>
+        </div>
+
+    </div>
+</body>
+</html>

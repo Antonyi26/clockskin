@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clockskin>
+	
+	<drawable>
+		<name>background.png</name>
+	</drawable>
+	
+	<drawable>
+		<name>weekday.xml</name>
+		<arraytype>5</arraytype>
+		<centerX>0</centerX>
+		<centerY>-170</centerY>
+	</drawable>
+	
+	<drawable>
+		<name>month.xml</name>
+		<arraytype>3</arraytype>
+		<centerX>-30</centerX>
+		<centerY>-50</centerY>
+	</drawable>
+
+	<drawable>
+		<name>date.xml</name>
+		<arraytype>1</arraytype>
+		<centerX>130</centerX>
+		<centerY>-50</centerY>
+	</drawable>
+	
+	<drawable>
+		<name>time.xml</name>
+		<arraytype>6</arraytype>
+		<centerX>0</centerX>
+		<centerY>90</centerY>
+	</drawable>
+	
+	<drawable>
+		<name>step.xml</name>
+		<arraytype>12</arraytype>
+		<centerX>-200</centerX>
+		<centerY>220</centerY>
+	</drawable>
+	
+	<drawable>
+		<name>battery.xml</name>
+		<arraytype>14</arraytype>
+		<centerX>250</centerX>
+		<centerY>220</centerY>
+	</drawable>
+	
+	<!-- charging battery -->
+	<drawable>
+		<arraytype>99</arraytype>
+		<!-- <name>battery.png</name> -->
+		<centerX>0</centerX>
+		<centerY>170</centerY>		
+	</drawable>
+
+</clockskin>
