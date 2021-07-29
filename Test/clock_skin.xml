@@ -15,44 +15,67 @@
 	<drawable>
 		<name>month.xml</name>
 		<arraytype>3</arraytype>
-		<centerX>-30</centerX>
-		<centerY>-50</centerY>
+		<centerX>-20</centerX>
+		<centerY>-80</centerY>
 	</drawable>
 
 	<drawable>
-		<name>date.xml</name>
-		<arraytype>1</arraytype>
-		<centerX>130</centerX>
-		<centerY>-50</centerY>
+		<name>day.xml</name>
+		<arraytype>4</arraytype>
+		<centerX>-200</centerX>
+		<centerY>-80</centerY>
+	</drawable>
+	
+	<drawable>
+		<name>year.xml</name>
+		<arraytype>16</arraytype>
+		<centerX>200</centerX>
+		<centerY>-80</centerY>
 	</drawable>
 	
 	<drawable>
 		<name>time.xml</name>
 		<arraytype>6</arraytype>
 		<centerX>0</centerX>
-		<centerY>90</centerY>
+		<centerY>20</centerY>
 	</drawable>
 	
 	<drawable>
+		<name>battery.png</name>
+		<centerX>0</centerX>
+		<centerY>50</centerY>
+	</drawable>
+	
+	<drawable>
+		<name>hand_bat_1.png</name>
+		<centerX>0</centerX>
+		<centerY>50</centerY>
+		<rotate>6</rotate>
+		<angle>-55</angle>
+		<startAngle>312</startAngle>
+		<direction>2</direction>
+	</drawable>	
+	
+<!-- 	<drawable>
 		<name>step.xml</name>
 		<arraytype>12</arraytype>
 		<centerX>-200</centerX>
 		<centerY>220</centerY>
-	</drawable>
+	</drawable> -->
 	
-	<drawable>
+<!-- 	<drawable>
 		<name>battery.xml</name>
 		<arraytype>14</arraytype>
 		<centerX>250</centerX>
 		<centerY>220</centerY>
-	</drawable>
+	</drawable> -->
 	
 	<!-- charging battery -->
 	<drawable>
 		<arraytype>99</arraytype>
 		<!-- <name>battery.png</name> -->
-		<centerX>0</centerX>
-		<centerY>170</centerY>		
+		<centerX>220</centerX>
+		<centerY>220</centerY>		
 	</drawable>
 
 </clockskin>
