@@ -18,63 +18,106 @@
 		<centerX>-20</centerX>
 		<centerY>-80</centerY>
 	</drawable>
-
+	
+	<!-- текущий день -->
 	<drawable>
-		<name>day.xml</name>
+		<name>digit_5.xml</name>
 		<arraytype>4</arraytype>
 		<centerX>-200</centerX>
 		<centerY>-80</centerY>
 	</drawable>
 	
+	<!-- текущий год -->
 	<drawable>
-		<name>year.xml</name>
+		<name>digit_5.xml</name>
 		<arraytype>16</arraytype>
 		<centerX>200</centerX>
 		<centerY>-80</centerY>
 	</drawable>
 	
+	<!-- текущее время (hh:mm) -->
 	<drawable>
-		<name>time.xml</name>
+		<name>digit_big.xml</name>
 		<arraytype>6</arraytype>
 		<centerX>0</centerX>
-		<centerY>20</centerY>
+		<centerY>60</centerY>
 	</drawable>
 	
-	<drawable>
-		<name>battery.png</name>
-		<centerX>0</centerX>
-		<centerY>50</centerY>
-	</drawable>
-	
-	<drawable>
-		<name>hand_bat_1.png</name>
-		<centerX>0</centerX>
-		<centerY>50</centerY>
-		<rotate>6</rotate>
-		<angle>-55</angle>
-		<startAngle>312</startAngle>
-		<direction>2</direction>
-	</drawable>	
-	
-<!-- 	<drawable>
-		<name>step.xml</name>
-		<arraytype>12</arraytype>
-		<centerX>-200</centerX>
-		<centerY>220</centerY>
-	</drawable> -->
-	
-<!-- 	<drawable>
-		<name>battery.xml</name>
+	<!-- текущий заряд батареи -->
+	<!-- <drawable>
+		<name>digit_0.xml</name>
 		<arraytype>14</arraytype>
 		<centerX>250</centerX>
-		<centerY>220</centerY>
-	</drawable> -->
+		<centerY>170</centerY>
+	</drawable>	 -->
 	
-	<!-- charging battery -->
+	<!-- батарея (окружность с цифрами) -->
+	<drawable>
+		<name>digit_0.xml</name>
+		<arraytype>17</arraytype>
+		<centerX>250</centerX>
+		<centerY>170</centerY>
+		<colorarray>232323,ff6347</colorarray>
+	</drawable>
+	
+	<!-- шагомер (окружность с цифрами) -->
+	<drawable>
+		<name>digit_0.xml</name>
+		<arraytype>18</arraytype>
+		<centerX>-250</centerX>
+		<centerY>170</centerY>
+		<colorarray>232323,ffff00</colorarray>
+	</drawable>
+	
+	<!-- инидикатор батареи (угол поворота) -->
+	<!-- <drawable>
+		<name>arrow.png</name>
+		<rotate>6</rotate>
+		<centerY>50</centerY>
+		<direction>2</direction>
+		<angle>80</angle>
+		<startAngle>-155</startAngle>
+	</drawable> -->	
+
+	<!-- инидикатор шагомера (арка) -->
+    <!-- <drawable>
+        <arraytype>56</arraytype>
+        <width>20</width>
+        <radius>300</radius>
+        <colorarray>#7FFFD4,#7FFFD4</colorarray>
+        <direction>1</direction>
+        <angle>90</angle>
+        <startAngle>135</startAngle>
+    </drawable> -->
+	
+	<!-- инидикатор батареи (арка) -->
+    <!-- <drawable>
+        <arraytype>58</arraytype>
+		<centerX>250</centerX>
+		<centerY>170</centerY>
+        <width>15</width>
+        <radius>55</radius>
+        <colorarray>#ffff00,#ffff00</colorarray>
+        <direction>2</direction>
+        <angle>230</angle>
+        <startAngle>-115</startAngle>
+    </drawable> -->
+	
+	<!-- инидикатор пройденного расстояния (арка) -->
+    <!-- <drawable>
+        <arraytype>59</arraytype>
+        <width>13</width>
+        <radius>141</radius>
+        <colorarray>#0069fb,#0069fb</colorarray>
+        <direction>2</direction>
+        <angle>76</angle>
+        <startAngle>52</startAngle>
+    </drawable> -->
+	
+	<!-- инидикатор батареи (пиктограмма при зарядке) -->
 	<drawable>
 		<arraytype>99</arraytype>
-		<!-- <name>battery.png</name> -->
-		<centerX>220</centerX>
+		<centerX>0</centerX>
 		<centerY>220</centerY>		
 	</drawable>
 

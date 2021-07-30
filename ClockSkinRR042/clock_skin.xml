@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clockskin>
+	<drawable>
+		<name>newww1.png</name>
+	</drawable>
+<drawable>
+        <arraytype>56</arraytype>
+     <width>17</width>
+        <radius>188</radius> 
+        <colorarray>#dece02,#dece02</colorarray>
+        <startAngle>230</startAngle>
+        <angle>80</angle>
+        <mulrotate>3</mulrotate>
+        <centerX>0</centerX>
+        <centerY>0</centerY>
+  
+    </drawable>
+    <drawable>
+        <arraytype>59</arraytype>
+         <width>17</width>
+        <radius>185</radius> 
+        <colorarray>#085fe0,#085fe0</colorarray>
+        <startAngle>-320</startAngle>
+        <angle>-80</angle>
+        <mulrotate>3</mulrotate>
+        <centerX>0</centerX>
+        <centerY>0</centerY>
+    </drawable>
+    <drawable>
+        <arraytype>58</arraytype>
+        <width>17</width>
+        <radius>188</radius> 
+        <colorarray>#be0103,#be0103</colorarray>
+        <startAngle>140</startAngle>
+        <angle>80</angle>
+        <mulrotate>3</mulrotate>
+        <centerX>0</centerX>
+        <centerY>0</centerY>
+    </drawable>
+<drawable>
+		<name>newww333.png</name>
+	</drawable>
+	<drawable>
+		<name>h.xml</name>
+		<arraytype>7</arraytype>
+		<centerY>-55</centerY>
+	</drawable>
+	<drawable>
+		<name>h_1.xml</name>
+		<arraytype>8</arraytype>
+		<centerY>55</centerY>
+	</drawable>
+	<drawable>
+		<name>md.xml</name>
+		<arraytype>2</arraytype>
+		<centerX>-34</centerX>
+		<centerY>145</centerY>
+	</drawable>
+	<drawable>
+		<name>wd.xml</name>
+		<arraytype>5</arraytype>
+		<centerX>39</centerX>
+		<centerY>145</centerY>
+	</drawable>
+	<drawable>
+		<arraytype>99</arraytype>
+		<centerX>-28</centerX>
+		<centerY>180</centerY>
+	</drawable>
+	<drawable>
+		<name>sec.xml</name>
+		<arraytype>9</arraytype>
+		<centerX>88</centerX>
+		<centerY>-20</centerY>
+	</drawable>
+	<drawable>
+		<name>am.xml</name>
+		<arraytype>6</arraytype>
+		<centerX>9</centerX>
+		<centerY>25</centerY>
+	</drawable>
+	<drawable>
+		<name>sec_1343.xml</name>
+		<arraytype>14</arraytype>
+		<centerX>-134</centerX>
+		<centerY>77</centerY>
+	</drawable>
+	<drawable>
+		<name>sec_134_1.xml</name>
+		<arraytype>12</arraytype>
+		<centerX>-5</centerX>
+		<centerY>-152</centerY>
+	</drawable>
+	<drawable>
+		<name>sec_134_1_1.xml</name>
+		<arraytype>60</arraytype>
+		<centerX>120</centerX>
+		<centerY>77</centerY>
+	</drawable>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.0.0'/>
+-->
+</clockskin>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<drawables>
+	<image>am_num_0.png</image>
+	<image>am_num_1.png</image>
+	<image>am_num_2.png</image>
+	<image>am_num_3.png</image>
+	<image>am_num_4.png</image>
+	<image>am_num_5.png</image>
+	<image>am_num_6.png</image>
+	<image>am_num_7.png</image>
+	<image>am_num_8.png</image>
+	<image>am_num_9.png</image>
+	<image>am_num_colon.png</image>
+	<image>am_num_am.png</image>
+	<image>am_num_pm.png</image>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.0.0' type='array_hourminute' forecolor='FFFFFF' autoscale='1' font='Roboto Condensed' fontstyle='Regular' fontsize='19.47204'>
+<content></content>
+<content></content>
+<content></content>
+<content></content>
+<content></content>
+<content></content>
+<content></content>
+<content></content>
+<content></content>
+<content></content>
+<content></content>
+<content>AM</content>
+<content>PM</content>
+</metadata>
+-->
+</drawables>

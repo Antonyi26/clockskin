@@ -156,8 +156,9 @@ class ClockSkinWidget(QGraphicsView):
         self.refresh()
     # --------------------------------------------------------------------------
     def refresh(self):
-        self.scene().clear()
-        self.create()        
+        if self.xml:
+            self.scene().clear()
+            self.create()        
     # --------------------------------------------------------------------------
     def save(self):
         pass
@@ -204,7 +205,9 @@ if __name__ == '__main__':
             MainWindow.setWindowTitle(f'{title} - {action.text()}')
         ]
     )
-    [skinsMenu.addAction(_dir.name) for _dir in os.scandir() if _dir.is_dir()]
+    # [skinsMenu.addAction(_dir.name) for _dir in os.scandir() if _dir.is_dir()]
+    folders = filter(lambda x: os.path.isdir(x) and os.path.exists(os.path.join(x, 'clock_skin.xml')), os.listdir())
+    for i in folders: skinsMenu.addAction(i)
     MainWindow.setWindowTitle(title)
     MainWindow.setCentralWidget(centralWidget)
     MainWindow.show()

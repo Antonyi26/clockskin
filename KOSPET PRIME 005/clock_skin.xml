@@ -1,0 +1,102 @@
+<clockskin>
+    <drawable>
+        <name>bg.png</name>
+    </drawable>
+    <drawable>
+        <name>digital6.xml</name>
+        <arraytype>14</arraytype>
+        <centerX>14</centerX>
+        <centerY>-108</centerY>
+    </drawable>
+    <drawable>
+        <name>digital2.xml</name>
+        <arraytype>12</arraytype>
+        <centerX>-108</centerX>
+        <centerY>21</centerY>
+    </drawable>
+    <drawable>
+        <name>dis.xml</name>
+        <arraytype>60</arraytype>
+        <centerX>95</centerX>
+        <centerY>18</centerY>
+    </drawable>
+    <!-- <drawable>
+        <name>battery.xml</name>
+        <arraytype>61</arraytype>
+        <centerX>-27</centerX>
+        <centerY>-110</centerY>
+    </drawable> -->
+    <drawable>
+        <name>digital3.xml</name>
+        <arraytype>7</arraytype>
+        <centerX>0</centerX>
+        <centerY>-36</centerY>
+    </drawable>
+    <drawable>
+        <name>digital4.xml</name>
+        <arraytype>8</arraytype>
+        <centerX>0</centerX>
+        <centerY>33</centerY>
+    </drawable>
+    <drawable>
+        <name>digital5.xml</name>
+        <arraytype>5</arraytype>
+        <centerX>30</centerX>
+        <centerY>118</centerY>
+    </drawable>
+    <drawable>
+        <name>digital6.xml</name>
+        <arraytype>2</arraytype>
+        <centerX>-22</centerX>
+        <centerY>118</centerY>
+    </drawable>
+<!--     <drawable>
+        <arraytype>56</arraytype>
+        <width>12</width>
+        <radius>142</radius>
+        <colorarray>#fc001f</colorarray>
+        <direction>1</direction>
+        <angle>60</angle>
+        <startAngle>0</startAngle>
+    </drawable> -->
+	
+	<!-- инидикатор шагомера (арка) -->
+    <!-- <drawable>
+        <arraytype>56</arraytype>
+        <width>20</width>
+        <radius>300</radius>
+        <colorarray>#7FFFD4,#7FFFD4</colorarray>
+        <direction>1</direction>
+        <angle>90</angle>
+        <startAngle>135</startAngle>
+    </drawable> -->
+	
+	<!-- инидикатор батареи (арка) -->
+    <!-- <drawable>
+        <arraytype>58</arraytype>
+        <width>20</width>
+        <radius>300</radius>
+        <colorarray>#ff6347,#ff6347</colorarray>
+        <direction>2</direction>
+        <angle>90</angle>
+        <startAngle>45</startAngle>
+    </drawable> -->
+	
+	<!-- инидикатор пройденного расстояния (арка) -->
+    <!-- <drawable>
+        <arraytype>59</arraytype>
+        <width>13</width>
+        <radius>141</radius>
+        <colorarray>#0069fb,#0069fb</colorarray>
+        <direction>2</direction>
+        <angle>76</angle>
+        <startAngle>52</startAngle>
+    </drawable> -->
+	
+	<!-- инидикатор батареи (пиктограмма при зарядке) -->
+	<drawable>
+		<arraytype>99</arraytype>
+		<centerX>-27</centerX>
+		<centerY>141</centerY>
+	</drawable>
+</clockskin>
