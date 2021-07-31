@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<drawables>
+	<image>day_array_sun.png</image>
+	<image>day_array_mon.png</image>
+	<image>day_array_tue.png</image>
+	<image>day_array_wed.png</image>
+	<image>day_array_thu.png</image>
+	<image>day_array_fri.png</image>
+	<image>day_array_sat.png</image>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.6.0' type='array_weekday' autoscale='1' font='Microsoft Sans Serif' fontstyle='Regular' fontsize='39.75842'>
+<content>Sun</content>
+<content>Mon</content>
+<content>Tue</content>
+<content>Wed</content>
+<content>Thu</content>
+<content>Fri</content>
+<content>Sat</content>
+</metadata>
+-->
+</drawables>

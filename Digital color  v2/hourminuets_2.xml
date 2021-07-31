@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<drawables>
+	<image>hourminuets_num_0_2.png</image>
+	<image>hourminuets_num_1_2.png</image>
+	<image>hourminuets_num_2_2.png</image>
+	<image>hourminuets_num_3_2.png</image>
+	<image>hourminuets_num_4_2.png</image>
+	<image>hourminuets_num_5_2.png</image>
+	<image>hourminuets_num_6_2.png</image>
+	<image>hourminuets_num_7_2.png</image>
+	<image>hourminuets_num_8_2.png</image>
+	<image>hourminuets_num_9_2.png</image>
+	<image>hourminuets_num_colon_2.png</image>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.6.0' type='array_hourminute' autoscale='0' font='Kozuka Gothic Pro EL' fontstyle='Regular' fontsize='71.22906'>
+<content>0</content>
+<content>1</content>
+<content>2</content>
+<content>3</content>
+<content>4</content>
+<content>5</content>
+<content>6</content>
+<content>7</content>
+<content>8</content>
+<content>9</content>
+<content forecolor='000000'>:</content>
+<content forecolor='000000'></content>
+<content></content>
+</metadata>
+-->
+</drawables>

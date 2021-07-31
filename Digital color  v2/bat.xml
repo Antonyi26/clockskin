@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<drawables>
+	<image>bt1.png</image>
+	<image>bt11.png</image>
+	<image>bt2.png</image>
+	<image>bt22.png</image>
+	<image>bt3.png</image>
+	<image>bt33.png</image>
+	<image>bt4.png</image>
+	<image>bt44.png</image>
+	<image>bt5.png</image>
+	<image>bt55.png</image>
+	<image>bt61.png</image>
+	<image>bt62.png</image>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.0.0' type='array_battery_level' forecolor='FFFFFF' autoscale='1' font='Futura Md BT' fontstyle='Regular' fontsize='16,14228'>
+<content>0</content>
+<content>1</content>
+<content>2</content>
+<content>3</content>
+<content>4</content>
+<content>5</content>
+<content>6</content>
+<content>7</content>
+<content>8</content>
+<content>9</content>
+<content></content>
+<content></content>
+</metadata>
+-->
+</drawables>

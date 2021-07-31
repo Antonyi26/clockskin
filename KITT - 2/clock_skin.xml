@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clockskin>
+	<drawable>
+		<name>KITT BLACK-1.png</name>
+	</drawable>
+	<drawable>
+		<name>COLORS-1.png</name>
+		<rotate>3</rotate>
+		<centerX>160</centerX>
+		<centerY>-162</centerY>
+		<mulrotate>8</mulrotate>
+	</drawable>
+	<drawable>
+		<name>BLK BACK-1.png</name>
+	</drawable>
+	<drawable>
+		<name>RIGHT-1.png</name>
+		<rotate>3</rotate>
+		<centerY>-942</centerY>
+		<direction>2</direction>
+		<mulrotate>9</mulrotate>
+	</drawable>
+	<drawable>
+		<name>LEFT-1.png</name>
+		<rotate>3</rotate>
+		<centerY>-942</centerY>
+		<direction>2</direction>
+		<mulrotate>9</mulrotate>
+	</drawable>
+	<drawable>
+		<name>SCANNER-1.png</name>
+	</drawable>
+	<drawable>
+		<name>KVL RIGHT-1.png</name>
+		<rotate>3</rotate>
+		<centerY>500</centerY>
+		<direction>2</direction>
+		<mulrotate>13</mulrotate>
+	</drawable>
+	<drawable>
+		<name>KVL LEFT-1.png</name>
+		<rotate>3</rotate>
+		<centerY>500</centerY>
+		<direction>2</direction>
+		<mulrotate>13</mulrotate>
+	</drawable>
+	<drawable>
+		<name>KITT DASH-1.png</name>
+	</drawable>
+	<drawable>
+		<name>hour_array_1.xml</name>
+		<arraytype>6</arraytype>
+		<centerX>10</centerX>
+		<centerY>-134</centerY>
+	</drawable>
+	<drawable>
+		<name>hr_array.xml</name>
+		<arraytype>13</arraytype>
+		<centerX>132</centerX>
+		<centerY>-68</centerY>
+	</drawable>
+	<drawable>
+		<name>steps_array.xml</name>
+		<arraytype>12</arraytype>
+		<centerX>123</centerX>
+		<centerY>67</centerY>
+	</drawable>
+	<drawable>
+		<name>month_day_array.xml</name>
+		<arraytype>2</arraytype>
+		<centerX>-130</centerX>
+		<centerY>67</centerY>
+	</drawable>
+	<drawable>
+		<name>battery_array.xml</name>
+		<arraytype>14</arraytype>
+		<centerX>126</centerX>
+		<centerY>-114</centerY>
+	</drawable>
+	<drawable>
+		<name>sec_array.xml</name>
+		<arraytype>9</arraytype>
+		<centerX>-200</centerX>
+	</drawable>
+	<drawable>
+		<arraytype>99</arraytype>
+	</drawable>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.0.0'/>
+-->
+</clockskin>

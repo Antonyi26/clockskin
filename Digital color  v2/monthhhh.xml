@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<drawables>
+	<image>monthhhh_jan.png</image>
+	<image>monthhhh_feb.png</image>
+	<image>monthhhh_mar.png</image>
+	<image>monthhhh_apr.png</image>
+	<image>monthhhh_may.png</image>
+	<image>monthhhh_jun.png</image>
+	<image>monthhhh_jul.png</image>
+	<image>monthhhh_aug.png</image>
+	<image>monthhhh_sep.png</image>
+	<image>monthhhh_oct.png</image>
+	<image>monthhhh_nov.png</image>
+	<image>monthhhh_dec.png</image>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.0.0' type='array_month' forecolor='E9E9E9' autoscale='1' font='Motken noqta' fontstyle='Bold' fontsize='21.00274'>
+<content>Jan</content>
+<content>Feb</content>
+<content>Mar</content>
+<content>Apr</content>
+<content>May</content>
+<content>Jun</content>
+<content>Jul</content>
+<content>Aug</content>
+<content>Sep</content>
+<content>Oct</content>
+<content>Nov</content>
+<content>Dec</content>
+</metadata>
+-->
+</drawables>

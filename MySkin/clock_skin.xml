@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clockskin>
+	
+	<drawable>
+		<name>bg.png</name>
+		<centerX>50</centerX>
+	</drawable>
+	
+	<!-- текущий день -->
+	<drawable>
+		<name>digit_18x27.xml</name>
+		<arraytype>4</arraytype>
+		<centerX>159</centerX>
+		<centerY>4</centerY>
+	</drawable>
+	
+	<!-- текущий месяц -->
+	<drawable>
+		<name>month.xml</name>
+		<arraytype>3</arraytype>
+		<centerX>52</centerX>
+		<centerY>-98</centerY>
+	</drawable>
+	
+	<!-- день недели -->
+	<drawable>
+		<name>weekday.xml</name>
+		<arraytype>5</arraytype>
+		<centerX>-59</centerX>
+		<centerY>5</centerY>
+	</drawable>
+	
+	<!-- текущее время (hh:mm) -->
+	<drawable>
+		<name>time.xml</name>
+		<arraytype>6</arraytype>
+		<centerX>50</centerX>
+		<centerY>80</centerY>
+	</drawable>
+	
+	<!-- дата (yyyy.mm.dd) -->
+	<drawable>
+		<name>year.xml</name>
+		<arraytype>1</arraytype>
+		<centerX>50</centerX>
+		<centerY>115</centerY>
+	</drawable>
+	
+	<!-- стрелка часов -->
+	<drawable>
+		<name>arrow_h.png</name>
+		<rotate>1</rotate>
+		<centerX>50</centerX>
+	</drawable>
+	
+	<!-- стрелка минут -->
+	<drawable>
+		<name>arrow_m.png</name>
+		<rotate>2</rotate>
+		<centerX>50</centerX>
+	</drawable>
+	
+	<!-- стрелка секунд -->
+	<drawable>
+		<name>arrow_s.png</name>
+		<rotate>3</rotate>
+		<centerX>50</centerX>
+	</drawable>	
+
+	<!-- батарея (окружность с цифрами) -->
+	<!-- <drawable>
+		<name>digit_15x18.xml</name>
+		<arraytype>17</arraytype>
+		<centerX>200</centerX>
+		<centerY>140</centerY>
+		<colorarray>111111,ffff00</colorarray>
+	</drawable> -->
+	
+	<!-- инидикатор батареи (арка) -->
+    <drawable>
+        <arraytype>58</arraytype>
+		<centerX>-205</centerX>
+		<centerY>-140</centerY>
+        <width>8</width>
+        <radius>50</radius>
+        <colorarray>#B22222,#B22222</colorarray>
+        <direction>2</direction>
+        <angle>360</angle>
+        <startAngle>-90</startAngle>
+    </drawable>	
+	<!-- инидикатор батареи (цифры) -->
+	<drawable>
+		<name>digit_15x18.xml</name>
+		<arraytype>14</arraytype>
+		<centerX>-205</centerX>
+		<centerY>-140</centerY>
+	</drawable>	
+	
+	<!-- шагомер (окружность с цифрами) -->
+	<drawable>
+		<name>digit_15x18.xml</name>
+		<arraytype>18</arraytype>
+		<centerX>-205</centerX>
+		<centerY>140</centerY>
+		<colorarray>000000,4682B4</colorarray>
+	</drawable>
+	
+</clockskin>
