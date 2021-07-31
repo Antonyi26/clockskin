@@ -3,10 +3,11 @@ import sys
 import xml.dom.minidom
 from datetime import datetime, date
 from PySide2.QtCore    import Qt, QPoint, QPointF, QRect, QTimer, QSize
+from PySide2.QtCore    import Signal, Slot 
 from PySide2.QtWidgets import QApplication, QWidget, QMainWindow
-from PySide2.QtWidgets import QVBoxLayout, QHBoxLayout
+from PySide2.QtWidgets import QVBoxLayout, QHBoxLayout, QSplitter
 from PySide2.QtWidgets import QGraphicsView, QGraphicsScene, QGraphicsItem
-from PySide2.QtWidgets import QPushButton
+from PySide2.QtWidgets import QPushButton, QListWidget, QAbstractItemView
 from PySide2.QtGui     import QPixmap, QPen, QBrush
 
 # ==============================================================================
@@ -19,12 +20,12 @@ class DrawableItem(QGraphicsItem):
     # --------------------------------------------------------------------------
     def __init__(self, **d):
         super().__init__()
-        self.file = d['file']
+        self.name = d['name']
 
-        if self.file.endswith('.png'):
-            self.imgs = [QPixmap(self.file)]
-        elif self.file.endswith('.xml'):
-            doc = xml.dom.minidom.parse(self.file)
+        if self.name.endswith('.png'):
+            self.imgs = [QPixmap(self.name)]
+        elif self.name.endswith('.xml'):
+            doc = xml.dom.minidom.parse(self.name)
             drawablesNode = doc.documentElement
             imageNodes = [node for node in drawablesNode.childNodes if node.nodeName == 'image']
             self.imgs = [QPixmap(node.firstChild.nodeValue) for node in imageNodes]
@@ -34,6 +35,7 @@ class DrawableItem(QGraphicsItem):
             max(map(lambda img: img.rect().height(), self.imgs))
         )
 
+        self.highlight = False
         self.arrayType = int(d.get('arraytype', 0))
         self.rotate = int(d.get('rotate', 0))
         self.mulrotate = int(d.get('mulrotate', 1))
@@ -42,15 +44,14 @@ class DrawableItem(QGraphicsItem):
         self.setPos(center - r.center())
         self.setTransformOriginPoint(r.center())
         #  self.mousePressed = False
-
-        if 'centerX' in d and 'centerY' in d:
-            self.setFlags(QGraphicsItem.ItemIsSelectable | QGraphicsItem.ItemIsMovable)
+        # if 'centerX' in d and 'centerY' in d:
+        #     self.setFlags(QGraphicsItem.ItemIsSelectable | QGraphicsItem.ItemIsMovable)
     # --------------------------------------------------------------------------
     def getImgForDraw(self):
         res = []
-        if self.file.endswith('.png'):
+        if self.name.endswith('.png'):
             res +=  self.imgs
-        elif self.file.endswith('.xml'):
+        elif self.name.endswith('.xml'):
             if self.arrayType == 1:
                 res += [self.imgs[int(i)] for i in str(datetime.now().year)]
                 res += [self.imgs[-1]]
@@ -116,13 +117,14 @@ class DrawableItem(QGraphicsItem):
 
         for i, img in enumerate(self.getImgForDraw()):
             if self.arrayType == 6 and img is self.imgs[-1]:
-                if datetime.now().second % 2 == 0:
-                    painter.drawPixmap(self.size.width() * i, 0, img)
-            else:
-                painter.drawPixmap(self.size.width() * i, 0, img.scaled(self.size, Qt.IgnoreAspectRatio))
+                if datetime.now().second % 2 != 0:
+                    continue
+            painter.drawPixmap(self.size.width() * i, 0, img)
+            # else:
+                # painter.drawPixmap(self.size.width() * i, 0, img.scaled(self.size, Qt.IgnoreAspectRatio))
                 # painter.drawPixmap(self.size.width() * i, 0, img)
         
-        if self.isSelected():
+        if self.highlight:
             r = self.boundingRect()
             painter.setPen(QPen(QBrush(Qt.yellow), 1, Qt.DashLine))
             painter.drawRect(r)         
@@ -136,6 +138,7 @@ class DrawableItem(QGraphicsItem):
 # ==============================================================================
 
 class ClockSkinWidget(QGraphicsView):
+    drawableListCreated = Signal(list)
     # --------------------------------------------------------------------------
     def __init__(self):
         super().__init__()
@@ -148,7 +151,7 @@ class ClockSkinWidget(QGraphicsView):
         # self.updateTimer.timeout.connect(self.refresh)
         self.updateTimer.start(1000//30)
     # --------------------------------------------------------------------------
-    def setDir(self, _dir):
+    def setDir(self, _dir: str):
         if os.getcwd() != CurrentDir:
             os.chdir('..')
         os.chdir(_dir)
@@ -160,6 +163,13 @@ class ClockSkinWidget(QGraphicsView):
             self.scene().clear()
             self.create()        
     # --------------------------------------------------------------------------
+    def highlightDrawable(self, drawableName: str):
+        arrayType = int(drawableName.split(':')[0])
+        for i in self.scene().items():
+            i.highlight = False
+            if i.arrayType == arrayType:
+                i.highlight = True
+    # --------------------------------------------------------------------------
     def save(self):
         pass
     # --------------------------------------------------------------------------
@@ -168,48 +178,65 @@ class ClockSkinWidget(QGraphicsView):
             elements = [node for node in drawable.childNodes if node.nodeType == node.ELEMENT_NODE]
             d = dict([(node.nodeName, node.firstChild.nodeValue) for node in elements])
             if 'name' in d:
-                d['file'] = d['name']
                 self.scene().addItem(DrawableItem(**d))
-
+        self.drawableListCreated.emit(['{:<3}: {}'.format(i.arrayType, i.name) for i in self.scene().items()])
 # ==============================================================================
 
 if __name__ == '__main__':
-    title = 'Clock skin'
+    title = 'ClockSkin Viewer'
     # делаем текущую директорию рабочей
     os.chdir(CurrentDir)
 
     app = QApplication([])
 
     clockSkinWidget = ClockSkinWidget()
+    
+    skinListWidget = QListWidget()
+    skinListWidget.setMaximumWidth(150)
+    skinListWidget.setSelectionMode(QAbstractItemView.SingleSelection)
+    skinListWidget.itemPressed.connect(
+        lambda item: clockSkinWidget.setDir(item.text())
+    )
+    # clockSkinListView.setMinimumWidth(100)
+    drawableListWidget = QListWidget()
+    drawableListWidget.setMaximumWidth(150)
+    drawableListWidget.setSelectionMode(QAbstractItemView.SingleSelection)
+    drawableListWidget.itemPressed.connect(
+        lambda item: clockSkinWidget.highlightDrawable(item.text())
+    )
+    clockSkinWidget.drawableListCreated.connect(
+        lambda items: [drawableListWidget.clear(), drawableListWidget.addItems(items)]
+    )
+    
     refreshBtn = QPushButton('Обновить')
     refreshBtn.pressed.connect(clockSkinWidget.refresh)
     saveBtn = QPushButton('Сохранить')
     saveBtn.pressed.connect(clockSkinWidget.save)
+    
     btnLayout = QHBoxLayout()
     btnLayout.addWidget(refreshBtn)
     btnLayout.addWidget(saveBtn)
+    
+    widgetLayout = QHBoxLayout()
+    widgetLayout.addWidget(skinListWidget)
+    widgetLayout.addWidget(clockSkinWidget)
+    widgetLayout.addWidget(drawableListWidget)
+    widgetLayout.setAlignment(clockSkinWidget, Qt.AlignCenter)
+    widgetLayout.setContentsMargins(0, 0, 0, 0)
+    
+    layout = QVBoxLayout()
+    layout.addLayout(widgetLayout)
+    layout.addLayout(btnLayout)
+    
+    MainWindow = QWidget()
+    MainWindow.setLayout(layout)
 
-    mainLayout = QVBoxLayout()
-    mainLayout.addWidget(clockSkinWidget)
-    mainLayout.addLayout(btnLayout)
-    mainLayout.setAlignment(clockSkinWidget, Qt.AlignCenter)
-    mainLayout.setContentsMargins(0, 0, 0, 0)
-    centralWidget = QWidget()
-    centralWidget.setLayout(mainLayout)
-
-    MainWindow = QMainWindow()
-    skinsMenu = MainWindow.menuBar().addMenu('Skins')
-    skinsMenu.triggered.connect(
-        lambda action: [
-            clockSkinWidget.setDir(action.text()), 
-            MainWindow.setWindowTitle(f'{title} - {action.text()}')
-        ]
-    )
-    # [skinsMenu.addAction(_dir.name) for _dir in os.scandir() if _dir.is_dir()]
-    folders = filter(lambda x: os.path.isdir(x) and os.path.exists(os.path.join(x, 'clock_skin.xml')), os.listdir())
-    for i in folders: skinsMenu.addAction(i)
+    if 'clockskin' in os.listdir():
+        os.chdir('clockskin')
+    
+    skins = list(filter(lambda x: os.path.isdir(x) and os.path.exists(os.path.join(x, 'clock_skin.xml')), os.listdir()))
+    skinListWidget.addItems(skins)
     MainWindow.setWindowTitle(title)
-    MainWindow.setCentralWidget(centralWidget)
     MainWindow.show()
 
     sys.exit(app.exec_())
