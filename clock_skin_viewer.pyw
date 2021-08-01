@@ -155,13 +155,11 @@ class ClockSkinWidget(QGraphicsView):
         if os.getcwd() != CurrentDir:
             os.chdir('..')
         os.chdir(_dir)
-        self.xml = xml.dom.minidom.parse('clock_skin.xml')
         self.refresh()
     # --------------------------------------------------------------------------
     def refresh(self):
-        if self.xml:
-            self.scene().clear()
-            self.create()        
+        self.scene().clear()
+        self.create()        
     # --------------------------------------------------------------------------
     def highlightDrawable(self, drawableName: str):
         arrayType = int(drawableName.split(':')[0])
@@ -174,11 +172,11 @@ class ClockSkinWidget(QGraphicsView):
         pass
     # --------------------------------------------------------------------------
     def create(self):
+        self.xml = xml.dom.minidom.parse('clock_skin.xml')
         for drawable in [node for node in self.xml.documentElement.childNodes if node.nodeName == 'drawable']:
             elements = [node for node in drawable.childNodes if node.nodeType == node.ELEMENT_NODE]
             d = dict([(node.nodeName, node.firstChild.nodeValue) for node in elements])
-            if 'name' in d:
-                self.scene().addItem(DrawableItem(**d))
+            if 'name' in d: self.scene().addItem(DrawableItem(**d))
         self.drawableListCreated.emit(['{:<3}: {}'.format(i.arrayType, i.name) for i in self.scene().items()])
 # ==============================================================================
 
